@@ -2,8 +2,8 @@
 
 1. Make sure that the required secrets are defined on Cloudify Manager, as follows:
 
-   | Secret                  |Description|
--------------------------|------|-----------|
+   | Secret                  | Description|
+   |------------|-------------------------|
    | `aws_access_key_id`     | AWS access key |
    | `aws_secret_access_key` | AWS secret key |
    | `azure_tenant_id`       | Azure tenant ID |
@@ -17,7 +17,25 @@
 
 3. Download this repository, clone or upload directly from the UI.
 4. Upload the blueprint
-5. Create and install deployment for azure
-6. Create and install deployment for aws
-7. Run infracost workflow
+
+   ```commandline
+   cfy blueprints upload -b tf_bp_generic terraform.modules.yaml
+   ```
+6. Create and install deployment for azure
+
+   ```commandline
+   cfy deployments create -b tf_bp_generic -d azure_vm -i inputs/inputs_azure_vm.json
+   cfy executions start install -d azure_vm
+   ```
+7. Create and install deployment for aws
+
+   ```commandline
+   cfy deployments create -b tf_bp_generic -d aws_vm -i inputs/inputs_aws_vm.json
+   cfy executions start install -d aws_vm
+   ```
+8. Run infracost workflow
+   ```commandline
+   cfy executions start run_infracost -d aws_vm
+   cfy executions start run_infracost -d azure_vm
+   ```
 
