@@ -118,7 +118,7 @@ node_templates:
         use_existing_resource: { get_input: use_existing_terraform }
       terraform_config: { get_input: terraform_config }
 
-  terraform_module:
+  terraform_plan:
     type: cloudify.nodes.terraform.Module
     properties:
       tflint_config: { get_input: tflint_config }
@@ -133,9 +133,15 @@ node_templates:
         source:
           location: { get_input: module_source }
         source_path: { get_input: module_source_path }
+    interfaces:
+      cloudify.interfaces.lifecycle:
+        configure:
+          implementation: tf.cloudify_tf.tasks.plan
+        delete: {}
     relationships:
       - target: terraform
         type: cloudify.terraform.relationships.run_on_host
+
 
 capabilities:
   outputs:

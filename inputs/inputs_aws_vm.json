@@ -35,5 +35,6 @@
     "installation_source": "https://github.com/env0/terratag/releases/download/v0.1.35/terratag_0.1.35_linux_amd64.tar.gz"
 
   },
-  "provider": []
+  "provider": [],
+  "backend": {}
 }

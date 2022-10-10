@@ -3,13 +3,13 @@ module_source: https://github.com/cloudify-community/tf-source/archive/refs/head
 module_source_path: template/modules/azure/public_vm/
 environment_variables: {}
 variables:
-  region: Please fill manually
+  region: { get_secret: azure_region }
   subscription_id: { get_secret: azure_subscription_id }
   tenant_id: { get_secret: azure_tenant_id }
   client_id: { get_secret: azure_client_id }
   client_secret: { get_secret: azure_client_secret }
   admin_user: admin
-  admin_key_public: Please fill manually
+  admin_key_public: { get_secret: public_key_content }
 use_existing_terraform: false
 terraform_config: {}
 infracost_config:
@@ -30,3 +30,4 @@ terratag_config:
     managed by: Cloudify
   installation_source: https://github.com/env0/terratag/releases/download/v0.1.35/terratag_0.1.35_linux_amd64.tar.gz
 provider: []
+backend: {}

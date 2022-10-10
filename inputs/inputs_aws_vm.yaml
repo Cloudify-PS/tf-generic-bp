@@ -4,10 +4,10 @@ module_source: https://github.com/cloudify-community/tf-source/archive/refs/head
 module_source_path: template/modules/public_vm/
 environment_variables: {}
 variables:
-  aws_region: Please fill manually
-  aws_zone: Please fill manually
-  secret_key: { get_secret: aws_secret_key }
-  access_key: { get_secret: aws_access_key }
+  aws_region: us-east-2
+  aws_zone: us-east-2a
+  secret_key: { get_secret: aws_secret_access_key }
+  access_key: { get_secret: aws_access_key_id }
   admin_user: admin
   admin_key_public: Please fill manually
 use_existing_terraform: false
@@ -30,3 +30,4 @@ terratag_config:
     managed by: Cloudify
   installation_source: https://github.com/env0/terratag/releases/download/v0.1.35/terratag_0.1.35_linux_amd64.tar.gz
 provider: []
+backend: {}
