@@ -145,8 +145,8 @@ node_templates:
 
 capabilities:
   outputs:
-    value: { get_attribute: [ terraform_module, outputs] }
+    value: { get_attribute: [ terraform_plan, outputs] }
   infracost:
-    value: { get_attribute: [ terraform_module, plain_text_infracost] }
+    value: { get_attribute: [ terraform_plan, plain_text_infracost] }
   plan:
-    value: { get_attribute: [ terraform_module, plan] }
+    value: { get_attribute: [ terraform_plan, plan] }
