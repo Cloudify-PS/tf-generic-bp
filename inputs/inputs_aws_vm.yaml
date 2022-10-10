@@ -4,12 +4,12 @@ module_source: https://github.com/cloudify-community/tf-source/archive/refs/head
 module_source_path: template/modules/public_vm/
 environment_variables: {}
 variables:
-  aws_region: us-east-2
-  aws_zone: us-east-2a
+  aws_region: "Plese fill manually"
+  aws_zone: "Plese fill manually"
   secret_key: { get_secret: aws_secret_access_key }
   access_key: { get_secret: aws_access_key_id }
   admin_user: admin
-  admin_key_public: Please fill manually
+  admin_key_public: "Please fill manually"
 use_existing_terraform: false
 terraform_config: {}
 infracost_config:

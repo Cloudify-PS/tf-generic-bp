@@ -3,13 +3,13 @@ module_source: https://github.com/cloudify-community/tf-source/archive/refs/head
 module_source_path: template/modules/azure/public_vm/
 environment_variables: {}
 variables:
-  region: { get_secret: azure_region }
+  region: "Please fill manually"
   subscription_id: { get_secret: azure_subscription_id }
   tenant_id: { get_secret: azure_tenant_id }
   client_id: { get_secret: azure_client_id }
   client_secret: { get_secret: azure_client_secret }
   admin_user: admin
-  admin_key_public: { get_secret: public_key_content }
+  admin_key_public: "Please fill manually"
 use_existing_terraform: false
 terraform_config: {}
 infracost_config:
