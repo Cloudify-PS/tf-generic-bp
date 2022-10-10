@@ -4,8 +4,8 @@ module_source: https://github.com/cloudify-community/tf-source/archive/refs/head
 module_source_path: template/modules/public_vm/
 environment_variables: {}
 variables:
-  aws_region: "Plese fill manually"
-  aws_zone: "Plese fill manually"
+  aws_region: "Please fill manually"
+  aws_zone: "Please fill manually"
   secret_key: { get_secret: aws_secret_access_key }
   access_key: { get_secret: aws_access_key_id }
   admin_user: admin
