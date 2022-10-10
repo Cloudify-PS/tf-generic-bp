@@ -143,4 +143,4 @@ capabilities:
   infracost:
     value: { get_attribute: [ terraform_module, plain_text_infracost] }
   plan:
-    value: { get_attribute: [ terraform_module, plan] }
+    value: { get_attribute: [ terraform_module, plain_text_plan] }
