@@ -26,7 +26,7 @@
   "tfsec_config": {
     "enable": true,
     "flags_override":  ["soft_fail"],
-    "installation_source": "https://github.com/aquasecurity/tfsec/releases/download/v1.1.3/tfsec-linux-amd64"
+    "installation_source": "https://github.com/aquasecurity/tfsec/releases/download/v1.28.0/tfsec-linux-amd64"
   },
   "terratag_config": {
     "enable": true,
@@ -36,5 +36,6 @@
     "installation_source": "https://github.com/env0/terratag/releases/download/v0.1.35/terratag_0.1.35_linux_amd64.tar.gz"
 
   },
-  "provider": []
+  "provider": [],
+  "backend": {}
 }

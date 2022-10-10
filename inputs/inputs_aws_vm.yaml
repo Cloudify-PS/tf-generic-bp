@@ -4,12 +4,12 @@ module_source: https://github.com/cloudify-community/tf-source/archive/refs/head
 module_source_path: template/modules/public_vm/
 environment_variables: {}
 variables:
-  aws_region: Please fill manually
-  aws_zone: Please fill manually
-  secret_key: { get_secret: aws_secret_key }
-  access_key: { get_secret: aws_access_key }
+  aws_region: "Please fill manually"
+  aws_zone: "Please fill manually"
+  secret_key: { get_secret: aws_secret_access_key }
+  access_key: { get_secret: aws_access_key_id }
   admin_user: admin
-  admin_key_public: Please fill manually
+  admin_key_public: "Please fill manually"
 use_existing_terraform: false
 terraform_config: {}
 infracost_config:
@@ -23,10 +23,11 @@ tfsec_config:
   enable: true
   flags_override:
   - soft_fail
-  installation_source: https://github.com/aquasecurity/tfsec/releases/download/v1.1.3/tfsec-linux-amd64
+  installation_source: https://github.com/aquasecurity/tfsec/releases/download/v1.28.0/tfsec-linux-amd64
 terratag_config:
   enable: true
   tags:
     managed by: Cloudify
   installation_source: https://github.com/env0/terratag/releases/download/v0.1.35/terratag_0.1.35_linux_amd64.tar.gz
 provider: []
+backend: {}
